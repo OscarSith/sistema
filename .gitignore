@@ -7,3 +7,4 @@ Homestead.json
 .env.php
 .env
 *.zip
+/nbproject/private/

@@ -16,6 +16,10 @@ Route::post('add-user', ['as' => 'addUser', 'uses' => 'UsersController@store']);
 Route::get('user/{id}', ['as' => 'prepareEditUser', 'uses' => 'UsersController@show']);
 Route::put('user/{id}/edit', ['as' => 'editUser', 'uses' => 'UsersController@edit']);
 
+// proveedor
+Route::get('proveedores', 'ProveedorController@index');
+Route::post('agrega-proveedor', ['as' => 'addproveedor', 'uses' => 'ProveedorController@store']);
+
 Route::get('prueba', function() {
 	$arr = array(
 		'uno' => '1 uno',
