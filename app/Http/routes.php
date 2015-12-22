@@ -11,6 +11,24 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'UsersController@index');
+Route::post('add-user', ['as' => 'addUser', 'uses' => 'UsersController@store']);
+Route::get('user/{id}', ['as' => 'prepareEditUser', 'uses' => 'UsersController@show']);
+Route::put('user/{id}/edit', ['as' => 'editUser', 'uses' => 'UsersController@edit']);
+
+Route::get('prueba', function() {
+	$arr = array(
+		'uno' => '1 uno',
+		'otro' => [
+			'name' => 'Oscar',
+			'lastname' => 'larriega'
+		],
+		'dos' => 'tres'
+	);
+
+	echo "<pre>";
+	print_r($arr);
+	echo "<br>";
+	echo $arr['otro']['lastname'];
+	echo "</pre>";
 });
